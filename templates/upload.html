@@ -1,0 +1,62 @@
+﻿<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upload - DeepFake Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+    <main class="container">
+
+        <!-- Greeting Section -->
+        <div class="greeting">
+            <img src="{{ url_for('static', filename='images/profile_icon.jpg') }}" alt="User Icon" class="user-icon">
+
+            <h3>Welcome, {{ username }}</h3>
+        </div>
+
+        <!-- Upload Form -->
+        <form action="{{ url_for('upload_video', username=username) }}" method="POST" enctype="multipart/form-data">
+
+            <h2>Upload Video</h2>
+
+            <input type="file" name="file" accept=".mp4,.avi,.mov,.mkv,.webm" required>
+
+            <p class="upload-info">
+                Supported formats: MP4, AVI, MOV, MKV, WEBM
+            </p>
+
+            <p class="upload-info">
+                Maximum file size: 512 MB
+            </p>
+
+            <button type="submit">Analyze Video</button>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-message">
+                {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

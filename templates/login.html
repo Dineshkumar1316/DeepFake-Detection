@@ -1,0 +1,74 @@
+﻿<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - DeepFake Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+
+    <main class="container">
+
+        <form action="{{ url_for('login') }}" method="POST">
+
+            <h2>Login</h2>
+
+
+            <input type="text" name="username" placeholder="Username" autocomplete="username" required>
+
+
+            <input type="password" name="password" placeholder="Password" autocomplete="current-password" required>
+
+
+            <button type="submit" class="cta-button">
+                Login
+            </button>
+
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+            {% if messages %}
+
+            <div class="flash-message">
+
+                {% for category, message in messages %}
+
+                <p class="{{ category }}">
+                    {{ message }}
+                </p>
+
+                {% endfor %}
+
+            </div>
+
+            {% endif %}
+
+            {% endwith %}
+
+
+            <p class="signup-link">
+                Don't have an account?
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </p>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
+

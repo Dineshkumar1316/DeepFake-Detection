@@ -1,0 +1,38 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files
+temp_processing/
+uploads/
+output/
+
+# Generated media
+static/videos/
+static/image1/
+static/image2/
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Flask session data
+flask_session/
+
+# Large model file (download separately)
+checkpoints/xception_deepfake_image_5o.h5

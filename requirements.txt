@@ -1,0 +1,8 @@
+Flask==3.0.3
+Flask-Session==0.8.0
+Werkzeug==3.0.6
+mysql-connector-python==9.1.0
+tensorflow==2.18.0
+numpy==2.0.2
+opencv-python==4.10.0.84
+mtcnn==1.0.0

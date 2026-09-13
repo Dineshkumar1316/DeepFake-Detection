@@ -1,0 +1,471 @@
+﻿<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DeepFake Detection - Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to DeepFake Detection</h1>
+
+            <p>
+                Analyze videos using an AI-powered deepfake detection
+                system and determine whether the video is likely to be
+                real or manipulated.
+            </p>
+
+            <a href="{{ url_for('login') }}" class="cta-button">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about-section">
+
+        <h2>About DeepFake Detection</h2>
+
+        <p>
+            Deepfake technology uses artificial intelligence and deep
+            learning techniques to manipulate digital media. It can be
+            used to create realistic-looking videos in which a person's
+            facial appearance has been altered or replaced.
+        </p>
+
+        <p>
+            Our DeepFake Detection system analyzes video frames and
+            detects faces before using an Xception-based deep learning
+            model to classify the video as either real or fake.
+            The system also provides a confidence score with the
+            prediction.
+        </p>
+
+        <p>
+            The application is designed to provide a simple way for
+            users to upload a video, perform automated analysis, and
+            receive a detection result without permanently storing the
+            uploaded video.
+        </p>
+
+    </section>
+
+
+    <!-- Feature Section -->
+    <section id="feature-section">
+
+        <div class="feature-content">
+
+            <h2>Our Detection Technology</h2>
+
+            <p>
+                The system combines video frame processing, face
+                detection, and deep learning to analyze uploaded videos.
+            </p>
+
+            <p>
+                Selected video frames are processed, faces are detected,
+                and the resulting face images are passed to the
+                Xception-based detection model. The predictions are
+                aggregated to produce the final result.
+            </p>
+
+        </div>
+
+
+        <img src="{{ url_for('static', filename='images/men_icon.png') }}" class="scroll-animated"
+            alt="DeepFake Detection Technology">
+
+
+        <div class="feature-steps">
+
+            <div class="feature-step">
+                <h3>Step 1</h3>
+                <p>
+                    Create an account or log in to the application.
+                </p>
+            </div>
+
+
+            <div class="feature-step">
+                <h3>Step 2</h3>
+                <p>
+                    Upload a supported video file for analysis.
+                </p>
+            </div>
+
+
+            <div class="feature-step">
+                <h3>Step 3</h3>
+                <p>
+                    Receive the REAL or FAKE prediction with its
+                    confidence score.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DeepFake Impact Section -->
+    <section id="deepfake-impact">
+
+        <h2 id="deepfake-impact-title">
+            DeepFakes Against Individuals and Businesses
+        </h2>
+
+
+        <div class="deepfake-impact-content">
+
+            <!-- Left Side Image -->
+            <div id="deepfake-image">
+
+                <img src="{{ url_for('static', filename='d2.jpg') }}" alt="DeepFake Impact">
+
+            </div>
+
+
+            <!-- Right Side Content -->
+            <div class="tab-content">
+
+                <div class="info-box">
+
+                    <div class="tab active-tab" id="individuals-tab" onclick="showContent('individuals')">
+                        <h3>For Individuals</h3>
+                    </div>
+
+
+                    <div class="tab" id="business-tab" onclick="showContent('business')">
+                        <h3>For Business</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="content-box">
+
+                    <div id="individuals-content" class="content active">
+
+                        <p>
+                            Deepfakes can be used to impersonate
+                            individuals, manipulate their appearance,
+                            and spread misleading or fabricated media.
+                        </p>
+
+                        <p>
+                            A deepfake detection system can provide an
+                            initial indication of whether a video may
+                            contain manipulated facial content. Such
+                            results should be considered alongside other
+                            evidence when authenticity is important.
+                        </p>
+
+                    </div>
+
+
+                    <div id="business-content" class="content">
+
+                        <p>
+                            Businesses can face risks from manipulated
+                            media, impersonation, misinformation, and
+                            fraudulent communications involving
+                            synthetic or altered content.
+                        </p>
+
+                        <p>
+                            Automated deepfake detection can serve as an
+                            additional verification step when reviewing
+                            potentially manipulated video content.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact-section">
+
+        <h2 style="color: azure;">
+            Contact Us
+        </h2>
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+                <span class="icon">ðŸ“§</span>
+                <span>Email</span>
+            </div>
+
+
+            <div class="contact-item">
+                <span class="icon">ðŸ’¼</span>
+                <span>Professional Profile</span>
+            </div>
+
+
+            <div class="contact-item">
+                <span class="icon">ðŸ’»</span>
+                <span>GitHub</span>
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            &copy; 2026 DeepFake Detection. All rights reserved.
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /*
+             * Smooth scrolling for navigation links.
+             */
+            const navigationLinks = document.querySelectorAll(
+                'a[href*="#"]'
+            );
+
+            navigationLinks.forEach(function (link) {
+
+                link.addEventListener("click", function (event) {
+
+                    const url = new URL(
+                        link.href,
+                        window.location.origin
+                    );
+
+                    const targetId = url.hash;
+
+                    if (!targetId) {
+                        return;
+                    }
+
+                    const targetSection =
+                        document.querySelector(targetId);
+
+                    if (!targetSection) {
+                        return;
+                    }
+
+                    /*
+                     * Only prevent the default action when the
+                     * destination is on the current page.
+                     */
+                    if (url.pathname === window.location.pathname) {
+
+                        event.preventDefault();
+
+                        const sectionTop =
+                            targetSection.getBoundingClientRect().top
+                            + window.scrollY;
+
+                        window.scrollTo({
+                            top: sectionTop - 60,
+                            behavior: "smooth"
+                        });
+                    }
+
+                });
+
+            });
+
+
+            /*
+             * Smooth scrolling when the page is opened with
+             * a section hash.
+             */
+            const hash = window.location.hash;
+
+            if (hash) {
+
+                const targetSection =
+                    document.querySelector(hash);
+
+                if (targetSection) {
+
+                    setTimeout(function () {
+
+                        const sectionTop =
+                            targetSection.getBoundingClientRect().top
+                            + window.scrollY;
+
+                        window.scrollTo({
+                            top: sectionTop - 60,
+                            behavior: "smooth"
+                        });
+
+                    }, 100);
+
+                }
+
+            }
+
+
+            /*
+             * Scroll animations.
+             */
+            const scrollAnimatedElements =
+                document.querySelectorAll(
+                    ".scroll-animated, .scroll-animated-left"
+                );
+
+            const tabContent =
+                document.querySelector(".tab-content");
+
+
+            function isElementInViewport(element) {
+
+                if (!element) {
+                    return false;
+                }
+
+                const rect =
+                    element.getBoundingClientRect();
+
+                return (
+                    rect.top < window.innerHeight &&
+                    rect.bottom > 0
+                );
+
+            }
+
+
+            function handleScrollAnimation() {
+
+                scrollAnimatedElements.forEach(function (element) {
+
+                    if (isElementInViewport(element)) {
+                        element.classList.add("in-view");
+                    }
+
+                });
+
+
+                if (isElementInViewport(tabContent)) {
+                    tabContent.classList.add("in-view");
+                }
+
+            }
+
+
+            window.addEventListener(
+                "scroll",
+                handleScrollAnimation
+            );
+
+            handleScrollAnimation();
+
+
+            /*
+             * Make the tab switching function available to the
+             * existing HTML onclick handlers.
+             */
+            window.showContent = function (type) {
+
+                document
+                    .querySelectorAll(".content")
+                    .forEach(function (content) {
+
+                        content.classList.remove("active");
+
+                    });
+
+
+                const selectedContent =
+                    document.getElementById(
+                        type + "-content"
+                    );
+
+                if (selectedContent) {
+                    selectedContent.classList.add("active");
+                }
+
+
+                document
+                    .querySelectorAll(".tab")
+                    .forEach(function (tab) {
+
+                        tab.classList.remove("active-tab");
+
+                    });
+
+
+                const selectedTab =
+                    document.getElementById(
+                        type + "-tab"
+                    );
+
+                if (selectedTab) {
+                    selectedTab.classList.add("active-tab");
+                }
+
+            };
+
+
+            /*
+             * Tab click handlers.
+             */
+            const individualsTab =
+                document.getElementById("individuals-tab");
+
+            const businessTab =
+                document.getElementById("business-tab");
+
+
+            if (individualsTab) {
+
+                individualsTab.addEventListener(
+                    "click",
+                    function () {
+                        window.showContent("individuals");
+                    }
+                );
+
+            }
+
+
+            if (businessTab) {
+
+                businessTab.addEventListener(
+                    "click",
+                    function () {
+                        window.showContent("business");
+                    }
+                );
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

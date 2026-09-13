@@ -1,0 +1,210 @@
+/* =========================================================
+   Sign Up Page
+   ========================================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* =========================================================
+   Sign Up Container
+   ========================================================= */
+
+.container {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================================================
+   Sign Up Form
+   ========================================================= */
+
+.container form {
+    width: 100%;
+    max-width: 400px;
+
+    margin: 0;
+    padding: 40px;
+
+    background-color: #ffffff;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    transition: transform 0.3s ease;
+}
+
+.container form:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   Form Heading
+   ========================================================= */
+
+.container form h2 {
+    margin: 0 0 20px;
+
+    text-align: center;
+
+    color: #282c34;
+}
+
+
+/* =========================================================
+   Form Fields
+   ========================================================= */
+
+.container form input,
+.container form select {
+    display: block;
+
+    width: 100%;
+
+    margin: 15px 0;
+    padding: 12px;
+
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    background-color: #ffffff;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.container form input:focus,
+.container form select:focus {
+    border-color: #61dafb;
+
+    outline: none;
+
+    box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.15);
+}
+
+
+/* =========================================================
+   Sign Up Button
+   ========================================================= */
+
+.container form button {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: #61dafb;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.container form button:hover {
+    background-color: #52c8e5;
+
+    transform: scale(1.02);
+}
+
+.container form button:active {
+    background-color: #0565b9;
+
+    transform: scale(0.98);
+}
+
+.container form button:focus-visible {
+    outline: 2px solid #4dc1e0;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   Login Link
+   ========================================================= */
+
+.login-link {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #555555;
+}
+
+.login-link a {
+    color: #0073e6;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   Flash Messages
+   ========================================================= */
+
+.flash-message {
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.flash-message p {
+    margin: 5px 0;
+
+    font-size: 14px;
+}
+
+.flash-message .error {
+    color: #d32f2f;
+}
+
+.flash-message .success {
+    color: #2e7d32;
+}
+
+
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .container form {
+        padding: 25px 20px;
+    }
+
+    .container form h2 {
+        font-size: 1.5em;
+    }
+}

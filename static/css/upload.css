@@ -1,0 +1,174 @@
+/* Upload Page */
+
+/* Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 90px auto 40px;
+    box-sizing: border-box;
+}
+
+/* Greeting Section */
+.greeting {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 30px;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.greeting h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Upload Form */
+.container form {
+    background: #fff;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* Form Heading */
+.container form h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    color: #282c34;
+}
+
+/* File Input */
+.container form input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container form input[type="file"]:focus {
+    border-color: #61dafb;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.2);
+}
+
+/* Upload Information */
+.upload-info {
+    margin: 8px 0;
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Analyze Button */
+.container form button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #61dafb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.container form button:hover {
+    background-color: #52c8e5;
+    transform: scale(1.02);
+}
+
+.container form button:active {
+    background-color: #0565b9;
+    transform: scale(0.98);
+}
+
+.container form button:focus-visible {
+    outline: 2px solid #282c34;
+    outline-offset: 2px;
+}
+
+/* Flash Messages */
+.flash-message {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.flash-message p {
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 15px;
+        margin-top: 85px;
+    }
+
+    .greeting {
+        margin-bottom: 20px;
+    }
+
+    .greeting h3 {
+        font-size: 1.3em;
+    }
+
+    .container form {
+        padding: 25px 20px;
+    }
+
+    .container form h2 {
+        font-size: 1.5em;
+    }
+
+    .container form input[type="file"] {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 400px) {
+    .user-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .greeting h3 {
+        font-size: 1.15em;
+    }
+
+    .container form {
+        padding: 20px 15px;
+    }
+}

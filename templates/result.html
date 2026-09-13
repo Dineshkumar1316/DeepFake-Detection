@@ -1,0 +1,102 @@
+﻿<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detection Result - DeepFake Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+
+    <main class="container">
+
+        <!-- Result Section -->
+        <section class="result-section">
+
+            <h2>DeepFake Detection Result</h2>
+
+
+            <div class="result-content">
+
+                <p>
+                    <strong>Detection Outcome:</strong>
+                </p>
+
+
+                <div class="result-value
+                    {% if result == 'FAKE' %}
+                        fake-result
+                    {% else %}
+                        real-result
+                    {% endif %}
+                ">
+                    {{ result }}
+                </div>
+
+
+                {% if confidence is not none %}
+
+                <p class="confidence-text">
+                    <strong>Confidence:</strong>
+                    {{ "%.2f"|format(confidence) }}%
+                </p>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+
+        <!-- Information Section -->
+        <section class="analysis-section">
+
+            <h3>Analysis Summary</h3>
+
+            <p>
+                The uploaded video was analyzed using the deepfake
+                detection model. Selected video frames were processed,
+                faces were detected, and the model predictions were
+                aggregated to produce the final classification.
+            </p>
+
+            <p class="result-note">
+                This result is an AI-based assessment and should be
+                considered an indication rather than absolute proof
+                of authenticity.
+            </p>
+
+        </section>
+
+
+        <!-- Actions -->
+        <section class="upload-link-container">
+
+            <a href="{{ url_for('upload_page', username=username) }}" class="upload-link">
+                Upload Another Video
+            </a>
+
+
+            <a href="{{ url_for('logout') }}" class="logout-link">
+                Logout
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+

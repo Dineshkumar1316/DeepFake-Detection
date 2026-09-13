@@ -1,0 +1,250 @@
+/* =========================================================
+   Detection Result Page
+   ========================================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* =========================================================
+   Main Container
+   ========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 100px auto 40px;
+    padding: 30px;
+
+    background-color: #f9f9f9;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   Result Section
+   ========================================================= */
+
+.result-section {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+.result-section h2 {
+    margin-bottom: 20px;
+
+    font-size: 2.2em;
+    color: #333333;
+}
+
+.result-content {
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-content p {
+    margin: 10px 0;
+
+    font-size: 1.2em;
+    color: #444444;
+}
+
+
+/* =========================================================
+   Detection Result
+   ========================================================= */
+
+.result-value {
+    margin: 20px 0;
+
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.fake-result {
+    color: #dc3545;
+}
+
+.real-result {
+    color: #28a745;
+}
+
+
+/* =========================================================
+   Confidence
+   ========================================================= */
+
+.confidence-text {
+    font-size: 1.3em !important;
+    color: #007bff !important;
+}
+
+
+/* =========================================================
+   Analysis Summary
+   ========================================================= */
+
+.analysis-section {
+    margin-bottom: 30px;
+    padding: 25px;
+
+    background-color: #ffffff;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    text-align: left;
+}
+
+.analysis-section h3 {
+    margin-top: 0;
+
+    color: #333333;
+}
+
+.analysis-section p {
+    margin: 10px 0;
+
+    font-size: 1em;
+    line-height: 1.7;
+
+    color: #555555;
+}
+
+.analysis-section .result-note {
+    margin-top: 20px;
+
+    font-size: 0.95em;
+
+    font-style: italic;
+
+    color: #777777;
+}
+
+
+/* =========================================================
+   Navigation Links
+   ========================================================= */
+
+.upload-link-container {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.upload-link,
+.logout-link {
+    display: inline-block;
+
+    margin: 10px 8px;
+    padding: 12px 20px;
+
+    font-size: 1em;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.upload-link {
+    background-color: #007bff;
+}
+
+.upload-link:hover {
+    background-color: #0056b3;
+
+    transform: translateY(-2px);
+}
+
+.logout-link {
+    background-color: #dc3545;
+}
+
+.logout-link:hover {
+    background-color: #a71d2a;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 92%;
+
+        margin: 90px auto 30px;
+        padding: 20px;
+    }
+
+    .result-section h2 {
+        font-size: 1.8em;
+    }
+
+    .result-value {
+        font-size: 2.4em;
+    }
+
+    .analysis-section {
+        padding: 20px;
+    }
+
+    .upload-link,
+    .logout-link {
+        font-size: 0.95em;
+
+        padding: 10px 15px;
+
+        margin: 6px 4px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 94%;
+
+        padding: 15px;
+    }
+
+    .result-section h2 {
+        font-size: 1.5em;
+    }
+
+    .result-value {
+        font-size: 2em;
+    }
+
+    .upload-link,
+    .logout-link {
+        display: block;
+
+        margin: 8px 0;
+    }
+}

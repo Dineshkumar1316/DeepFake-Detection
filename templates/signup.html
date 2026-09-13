@@ -1,0 +1,69 @@
+﻿<!-- templates/signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - DeepFake Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+    <main class="container">
+
+        <form action="{{ url_for('signup') }}" method="POST">
+
+            <h2>Create Account</h2>
+
+            <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
+
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+
+            <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+
+            <input type="date" name="date_of_birth" aria-label="Date of Birth" required>
+
+            <select name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+
+            <input type="text" name="username" placeholder="Username" autocomplete="username" required>
+
+            <input type="password" name="password" placeholder="Password" autocomplete="new-password" minlength="8"
+                required>
+
+            <button type="submit">Sign Up</button>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="flash-message">
+                {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <p class="login-link">
+                Already have an account?
+                <a href="{{ url_for('login') }}">Login</a>
+            </p>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
